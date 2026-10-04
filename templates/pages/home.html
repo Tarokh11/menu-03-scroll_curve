@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+<main>
+  <section class="hero">
+    <div class="hero-copy"><span class="eyebrow">یک گوشه‌ی دنج، یک فنجان آرامش</span><h1>به کافه وایت<br>خوش آمدید<span class="title-dot">.</span></h1><p>طعم لحظات خوب، در کنار شما</p><a class="primary-link" href="{% url 'menu' %}">کشف منوی وایت <span aria-hidden="true">←</span></a></div>
+    <img class="hero-art" src="{% static 'menu/images/hero.svg' %}" alt="تصویر موقت یک فنجان قهوه در فضای گرم کافه">
+    <span class="hero-caption">از اولین جرعه، تا آخرین لبخند</span>
+  </section>
+  <form class="search home-search" action="{% url 'menu' %}" role="search"><label class="sr-only" for="home-query">جستجو در منو</label><input id="home-query" name="q" type="search" placeholder="امروز دلت چه طعمی می‌خواد؟"><button aria-label="جستجو" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
+  <section class="categories-section" aria-labelledby="categories-title"><div class="section-heading"><div><span class="eyebrow">برای هر سلیقه، یک انتخاب</span><h2 id="categories-title">دسته‌بندی‌ها</h2></div><a href="{% url 'menu' %}">همه‌ی منو <span aria-hidden="true">←</span></a></div>
+    <div class="category-grid">{% for category in categories %}<a class="category-card category-{{ category.slug }}" href="{% url 'menu' %}?category={{ category.slug }}"><img src="{% static 'menu/images/' %}{{ category.image }}.svg" alt="" loading="lazy"><div><h3>{{ category.name }}</h3><p>{{ category.tagline }}</p></div><span class="card-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div>
+  </section>
+  <aside class="welcome-note"><span aria-hidden="true">✧</span><p>خوش‌طعم‌تر از همیشه،<br><strong>در کنار شما.</strong></p></aside>
+</main>
+{% endblock %}

@@ -1,0 +1,57 @@
+from html.parser import HTMLParser
+from pathlib import Path
+from xml.etree import ElementTree
+
+from django.conf import settings
+from django.contrib.staticfiles import finders
+from django.test import SimpleTestCase, override_settings
+from django.urls import reverse
+
+from .views import MENU_GROUPS
+
+
+class AssetParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.assets = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        for key in ("src", "href"):
+            value = attributes.get(key, "")
+            if value.startswith(settings.STATIC_URL):
+                self.assets.append(value.removeprefix(settings.STATIC_URL))
+
+
+@override_settings(STORAGES={"staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"}})
+class MenuPageTests(SimpleTestCase):
+    def test_entrance_links_to_every_category(self):
+        response = self.client.get(reverse("home"))
+        self.assertContains(response, "کافه وایت")
+        self.assertContains(response, 'dir="rtl"')
+        for category in MENU_GROUPS:
+            self.assertContains(response, f'/menu/?category={category["slug"]}')
+
+    def test_menu_contains_all_sample_products_and_filter_targets(self):
+        response = self.client.get(reverse("menu"), {"q": "لاته", "category": "coffee"})
+        self.assertEqual(response.status_code, 200)
+        for category in MENU_GROUPS:
+            self.assertContains(response, f'data-group="{category["slug"]}"')
+            for item in category["items"]:
+                self.assertContains(response, item["name"])
+                self.assertContains(response, item["price"])
+        self.assertContains(response, 'data-search=', count=20)
+
+    def test_all_rendered_local_assets_exist_and_svg_is_valid(self):
+        for route in ("home", "menu"):
+            parser = AssetParser()
+            parser.feed(self.client.get(reverse(route)).content.decode())
+            self.assertTrue(parser.assets)
+            for asset in parser.assets:
+                path = finders.find(asset)
+                if path is None:
+                    collected = settings.STATIC_ROOT / asset
+                    path = collected if collected.is_file() else None
+                self.assertIsNotNone(path, asset)
+                if asset.endswith(".svg"):
+                    ElementTree.parse(Path(path))

@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %}منوی کافه وایت{% endblock %}
+{% block content %}
+<main class="menu-page">
+  <div class="menu-intro"><span class="eyebrow">با عشق آماده می‌کنیم</span><h1>منوی وایت<span class="title-dot">.</span></h1><p>از عطر قهوه تا طعم یک صبحانه‌ی دلچسب</p></div>
+  <form class="search" role="search" id="menu-search-form"><label class="sr-only" for="menu-query">جستجوی نام یا ترکیبات</label><input id="menu-query" name="q" type="search" placeholder="جستجوی نام یا ترکیبات ..." autocomplete="off"><button aria-label="جستجو" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
+  <nav class="category-tabs" aria-label="دسته‌بندی محصولات"><button type="button" data-category="all" aria-pressed="true" class="active">همه</button>{% for category in categories %}<button type="button" data-category="{{ category.slug }}" aria-pressed="false">{{ category.name }}</button>{% endfor %}</nav>
+  <div id="menu-groups">{% for category in categories %}<section class="menu-group" data-group="{{ category.slug }}" aria-labelledby="heading-{{ category.slug }}"><div class="section-heading"><div><h2 id="heading-{{ category.slug }}">{{ category.name }}</h2><p>{{ category.tagline }}</p></div><span class="group-number">۰{{ forloop.counter }}</span></div><div class="product-grid">{% for item in category.items %}<article class="product-card" data-search="{{ item.name }} {{ item.description }} {{ category.name }}"><div class="product-image tone-{{ forloop.counter }}"><img src="{% static 'menu/images/' %}{{ item.image }}.svg" alt="تصویر موقت {{ item.name }}" loading="lazy"></div><div class="product-copy"><h3>{{ item.name }}</h3><p>{{ item.description }}</p><div class="price">{{ item.price }} <span>تومان</span></div></div></article>{% endfor %}</div></section>{% endfor %}</div>
+  <p id="no-results" class="no-results" role="status" hidden>طعم مورد نظرت پیدا نشد. یک عبارت دیگر امتحان کن.</p>
+  <p class="menu-note">✧ تصاویر موقت و قیمت‌ها نمونه هستند.</p>
+</main>
+{% endblock %}
