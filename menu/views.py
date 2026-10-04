@@ -47,3 +47,12 @@ def home(request):
 
 def menu(request):
     return render(request, "menu/index.html", {"shop_name": "کافه وایت", "categories": MENU_GROUPS})
+
+
+def explore(request):
+    products = [dict(item, category=group["slug"], category_name=group["name"], id=f'{group["slug"]}-{index}')
+                for group in MENU_GROUPS for index, item in enumerate(group["items"])]
+    return render(request, "menu/explore.html", {
+        "shop_name": "کافه وایت", "categories": MENU_GROUPS,
+        "products": products, "first_product": products[0],
+    })

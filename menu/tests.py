@@ -1,3 +1,4 @@
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
@@ -43,7 +44,7 @@ class MenuPageTests(SimpleTestCase):
         self.assertContains(response, 'data-search=', count=20)
 
     def test_all_rendered_local_assets_exist_and_svg_is_valid(self):
-        for route in ("home", "menu"):
+        for route in ("home", "menu", "explore"):
             parser = AssetParser()
             parser.feed(self.client.get(reverse(route)).content.decode())
             self.assertTrue(parser.assets)
@@ -55,3 +56,16 @@ class MenuPageTests(SimpleTestCase):
                 self.assertIsNotNone(path, asset)
                 if asset.endswith(".svg"):
                     ElementTree.parse(Path(path))
+
+    def test_explorer_has_category_controls_and_complete_product_data(self):
+        response = self.client.get(reverse("explore"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'data-explore-category=', count=6)
+        products = response.context["products"]
+        self.assertEqual(len(products), 20)
+        self.assertEqual(len({item["id"] for item in products}), 20)
+        for category in MENU_GROUPS:
+            self.assertEqual(sum(item["category"] == category["slug"] for item in products), 4)
+        serialized = response.content.decode().split('<script id="explore-products" type="application/json">')[1].split('</script>')[0]
+        self.assertEqual(json.loads(serialized), products)
+        self.assertContains(response, "اسپرسو")
