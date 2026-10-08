@@ -10,7 +10,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-RUN python manage.py collectstatic --noinput
+RUN DJANGO_SECRET_KEY=build-only-not-used python manage.py collectstatic --noinput
 
 EXPOSE 8000
 CMD ["gunicorn", "restaurant.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--access-logfile", "-", "--error-logfile", "-"]
