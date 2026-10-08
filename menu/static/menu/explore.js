@@ -20,6 +20,7 @@
   let lastProduct = null;
   let category = 'all';
   let geometry;
+  let categoryAnimationTimer;
 
   function showPhoto(item) {
     lightboxImage.src = item.image_url;
@@ -50,6 +51,7 @@
       const visible = Math.abs(distance) < 2.85;
       tile.hidden = !visible;
       if (!visible) return;
+      tile.style.setProperty('--enter-delay', `${Math.round(Math.abs(distance) * 24)}ms`);
       const degrees = distance * geometry.step;
       const angle = degrees * Math.PI / 180;
       const x = geometry.x + Math.cos(angle) * geometry.radius;
@@ -110,7 +112,7 @@
     animation = requestAnimationFrame(frame);
   }
 
-  function build(selectedId) {
+  function build(selectedId, animate = false) {
     stopAnimation();
     pointer = null;
     stage.classList.remove('is-dragging');
@@ -124,6 +126,10 @@
         const tile = document.createElement('button');
         tile.type = 'button';
         tile.className = 'orbit-card';
+        if (animate) {
+          tile.classList.add('is-entering');
+          tile.addEventListener('animationend', () => tile.classList.remove('is-entering'), {once: true});
+        }
         tile.setAttribute('aria-label', `نمایش بزرگ ${item.name}`);
         tile.setAttribute('aria-haspopup', 'dialog');
         tile.dataset.product = item.id;
@@ -159,7 +165,12 @@
       chip.classList.toggle('active', active);
       chip.setAttribute('aria-pressed', String(active));
     });
-    build();
+    clearTimeout(categoryAnimationTimer);
+    scene.classList.remove('is-category-changing');
+    void scene.offsetWidth;
+    scene.classList.add('is-category-changing');
+    categoryAnimationTimer = setTimeout(() => scene.classList.remove('is-category-changing'), 700);
+    build(undefined, true);
   }));
 
   stage.addEventListener('pointerdown', event => {
