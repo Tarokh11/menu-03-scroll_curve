@@ -33,7 +33,7 @@ class MenuPageTests(SimpleTestCase):
         for category in MENU_GROUPS:
             self.assertContains(response, f'/menu/?category={category["slug"]}')
 
-    def test_menu_contains_all_sample_products_and_filter_targets(self):
+    def test_menu_contains_all_imported_products_and_filter_targets(self):
         response = self.client.get(reverse("menu"), {"q": "لاته", "category": "coffee"})
         self.assertEqual(response.status_code, 200)
         for category in MENU_GROUPS:
@@ -41,7 +41,8 @@ class MenuPageTests(SimpleTestCase):
             for item in category["items"]:
                 self.assertContains(response, item["name"])
                 self.assertContains(response, item["price"])
-        self.assertContains(response, 'data-search=', count=20)
+        self.assertContains(response, 'data-search=', count=76)
+        self.assertNotContains(response, "افزودنی ها")
 
     def test_all_rendered_local_assets_exist_and_svg_is_valid(self):
         for route in ("home", "menu", "explore"):
@@ -60,12 +61,30 @@ class MenuPageTests(SimpleTestCase):
     def test_explorer_has_category_controls_and_complete_product_data(self):
         response = self.client.get(reverse("explore"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'data-explore-category=', count=6)
+        self.assertContains(response, 'data-explore-category=', count=10)
         products = response.context["products"]
-        self.assertEqual(len(products), 20)
-        self.assertEqual(len({item["id"] for item in products}), 20)
+        self.assertEqual(len(products), 76)
+        self.assertEqual(len({item["id"] for item in products}), 76)
+        self.assertNotIn("extras", {item["category"] for item in products})
         for category in MENU_GROUPS:
-            self.assertEqual(sum(item["category"] == category["slug"] for item in products), 4)
+            self.assertEqual(sum(item["category"] == category["slug"] for item in products), len(category["items"]))
+        for item in products:
+            self.assertEqual(item["image_url"], settings.STATIC_URL + item["image"])
+            self.assertIsNotNone(finders.find(item["image"]), item["id"])
         serialized = response.content.decode().split('<script id="explore-products" type="application/json">')[1].split('</script>')[0]
         self.assertEqual(json.loads(serialized), products)
-        self.assertContains(response, "اسپرسو")
+        self.assertContains(response, "میگو کرم پاپریکا")
+
+    def test_source_pizzas_and_selected_product_are_preserved(self):
+        response = self.client.get(reverse("explore"), {"product": "pizza-0"})
+        pizzas = [item for item in response.context["products"] if item["category"] == "pizza"]
+        self.assertEqual(len(pizzas), 22)
+        first = response.context["first_product"]
+        self.assertEqual(first["name"], "میگو کرم پاپریکا")
+        self.assertEqual(first["price"], "۱٬۷۵۰٬۰۰۰")
+        for item in pizzas:
+            self.assertTrue(item["source_image"].startswith("https://img.delino.com/"))
+            self.assertTrue(item["image"].endswith(".webp"))
+        coffee = self.client.get(reverse("explore"), {"product": "coffee-0"})
+        self.assertEqual(coffee.context["first_product"]["name"], "اسپرسو")
+        self.assertEqual(coffee.context["first_product"]["price"], "۲۲۰٬۰۰۰")

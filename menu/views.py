@@ -1,44 +1,18 @@
+import json
+from pathlib import Path
+
 from django.shortcuts import render
+from django.templatetags.static import static
 
 
 def persian_number(value):
     return f"{value:,}".translate(str.maketrans("0123456789,", "۰۱۲۳۴۵۶۷۸۹٬"))
 
 
-CATEGORIES = [
-    {"slug": "coffee", "name": "قهوه", "tagline": "یک فنجان حالِ خوب", "image": "coffee", "items": [
-        ("اسپرسو", "قهوه‌ای اصیل، با عطر قوی و کرمای مخملی", 95000),
-        ("کاپوچینو", "اسپرسو، شیر گرم و یک ابر کفِ شیر", 135000),
-        ("آیس لاته", "اسپرسو و شیر سرد، روی تکه‌های یخ", 145000),
-        ("لاته کارامل", "شیر نرم و لطیف با شیرینی کارامل", 155000),
-    ]},
-    {"slug": "breakfast", "name": "صبحانه", "tagline": "شروعی خوش‌طعم برای روز شما", "image": "breakfast", "items": [
-        ("صبحانه ایرانی", "پنیر، گردو، عسل، سبزی تازه و نان گرم", 185000),
-        ("املت سبزیجات", "تخم‌مرغ، گوجه، قارچ و سبزی‌های تازه", 165000),
-        ("تست آووکادو", "نان تست، آووکادو و تخم‌مرغ نیمرو", 195000),
-        ("پنکیک عسل", "پنکیک خانگی با عسل و میوه فصل", 175000),
-    ]},
-    {"slug": "cold", "name": "نوشیدنی‌های سرد", "tagline": "تازگی در هر جرعه", "image": "cold", "items": [
-        ("موهیتو", "لیموترش تازه، نعناع و آب گازدار", 125000),
-        ("لیموناد", "ترکیب خنک لیموی تازه و شیرینی ملایم", 115000),
-        ("آیس تی هلو", "چای سرد با عطر هلو و برش لیمو", 125000),
-        ("شیک شکلات", "بستنی وانیلی، شیر و شکلات تلخ", 165000),
-    ]},
-    {"slug": "tea", "name": "دمنوش", "tagline": "کمی آرامش، در یک فنجان", "image": "tea", "items": [
-        ("چای ایرانی", "چای خوش‌عطر ایرانی، همراه نبات", 75000),
-        ("دمنوش آرامش", "بابونه، به‌لیمو و عطر گل محمدی", 95000),
-        ("چای ماسالا", "چای و شیر با ادویه‌های گرم و معطر", 125000),
-        ("دمنوش زنجبیل", "زنجبیل تازه، لیمو و عسل", 105000),
-    ]},
-    {"slug": "food", "name": "غذاهای اصلی", "tagline": "طعم‌هایی برای کنار هم بودن", "image": "food", "items": [
-        ("پاستا آلفردو", "پاستا با مرغ، قارچ و سس خامه‌ای", 285000),
-        ("ساندویچ مرغ", "مرغ گریل، کاهو و سس مخصوص وایت", 245000),
-        ("سالاد سزار", "کاهوی تازه، مرغ گریل و پنیر پارمزان", 255000),
-        ("بشقاب سبزیجات", "سبزیجات گریل با نان و سس ماست", 225000),
-    ]},
-]
-
-MENU_GROUPS = [dict(category, items=[{"name": name, "description": description, "price": persian_number(price), "image": category["image"]} for name, description, price in category["items"]]) for category in CATEGORIES]
+MENU_SNAPSHOT = json.loads(Path(__file__).with_name("tulliana_menu.json").read_text())
+CATEGORIES = [category for category in MENU_SNAPSHOT["categories"] if category["slug"] != "extras"]
+MENU_GROUPS = [dict(category, items=[dict(item, price=persian_number(item["price"]))
+                                    for item in category["items"]]) for category in CATEGORIES]
 
 
 def home(request):
@@ -50,9 +24,13 @@ def menu(request):
 
 
 def explore(request):
-    products = [dict(item, category=group["slug"], category_name=group["name"], id=f'{group["slug"]}-{index}')
+    products = [dict(item, image_url=static(item["image"]), category=group["slug"],
+                     category_name=group["name"], id=f'{group["slug"]}-{index}')
                 for group in MENU_GROUPS for index, item in enumerate(group["items"])]
+    first_product = next((item for item in products if item["id"] == request.GET.get("product")), None)
+    if first_product is None:
+        first_product = next((item for item in products if item["category"] == request.GET.get("category")), products[0])
     return render(request, "menu/explore.html", {
         "shop_name": "کافه وایت", "categories": MENU_GROUPS,
-        "products": products, "first_product": products[0],
+        "products": products, "first_product": first_product,
     })

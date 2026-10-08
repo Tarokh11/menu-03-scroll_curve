@@ -117,7 +117,7 @@
         tile.setAttribute('aria-label', `انتخاب ${item.name}`);
         tile.dataset.product = item.id;
         const image = document.createElement('img');
-        image.src = `${root.dataset.imageBase}${item.image}.svg`;
+        image.src = item.image_url;
         image.alt = '';
         image.draggable = false;
         const label = document.createElement('span');

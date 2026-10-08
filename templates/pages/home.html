@@ -9,7 +9,7 @@
   </section>
   <form class="search home-search" action="{% url 'menu' %}" role="search"><label class="sr-only" for="home-query">جستجو در منو</label><input id="home-query" name="q" type="search" placeholder="امروز دلت چه طعمی می‌خواد؟"><button aria-label="جستجو" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
   <section class="categories-section" aria-labelledby="categories-title"><div class="section-heading"><div><span class="eyebrow">برای هر سلیقه، یک انتخاب</span><h2 id="categories-title">دسته‌بندی‌ها</h2></div><a href="{% url 'menu' %}">همه‌ی منو <span aria-hidden="true">←</span></a></div>
-    <div class="category-grid">{% for category in categories %}<a class="category-card category-{{ category.slug }}" href="{% url 'menu' %}?category={{ category.slug }}"><img src="{% static 'menu/images/' %}{{ category.image }}.svg" alt="" loading="lazy"><div><h3>{{ category.name }}</h3><p>{{ category.tagline }}</p></div><span class="card-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div>
+    <div class="category-grid">{% for category in categories %}<a class="category-card category-{{ category.slug }}" href="{% url 'menu' %}?category={{ category.slug }}"><img src="{% static category.image %}" alt="" loading="lazy"><div><h3>{{ category.name }}</h3><p>{{ category.tagline }}</p></div><span class="card-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div>
   </section>
   <aside class="welcome-note"><span aria-hidden="true">✧</span><p>خوش‌طعم‌تر از همیشه،<br><strong>در کنار شما.</strong></p></aside>
 </main>

@@ -26,7 +26,8 @@ The explorer arranges product images on a circular arc. Drag or swipe the images
 
 ## Edit content and artwork
 
-- `menu/views.py`: café name, five sample categories, 20 items, descriptions, and prices. Prices are stored as full toman amounts and displayed with Persian digits.
+- `menu/tulliana_menu.json`: local snapshot of Tulliana's menu: 9 categories and 76 products, including 22 pizzas. The Extras category is excluded. Prices are stored as full toman amounts and displayed with Persian digits. Source and import date are recorded in the snapshot.
+- `menu/views.py`: café branding and page data; loads the menu snapshot and resolves local image URLs.
 - `templates/layouts/base.html`: shared branding, navigation, footer.
 - `templates/pages/home.html`: entrance page.
 - `templates/menu/index.html`: main menu.
@@ -34,7 +35,11 @@ The explorer arranges product images on a circular arc. Drag or swipe the images
 - `menu/static/menu/menu.css`: theme and responsive layouts.
 - `menu/static/menu/menu.js`: navigation, search, and category selection.
 - `menu/static/menu/explore.css` and `explore.js`: mobile-first arc layout and rotation/selection interactions.
-- `menu/static/menu/images/`: local SVG placeholders. Replace with photographs and update the template extensions and item image paths when ready. Products currently reuse their category illustration.
+- `menu/static/menu/images/tulliana/`: 85 original product photos downloaded from the source CDN as WebP files. Products share photos only where the source does. Mineral water has no source image and uses `no-photo.svg`. The entrance hero remains illustrated.
+
+To refresh menu data and photos, run `.venv/bin/python menu/import_tulliana.py`. The website uses this local snapshot; it does not fetch the source during page requests. Open `/explore/?category=pizza&product=pizza-0` for the pizza carousel, or `/explore/?product=coffee-0` for espresso.
+
+The original simple café menu is preserved in commit `fe32059`; the sample menu with circular explorer is preserved in `b1c8659`.
 
 Vazirmatn loads from Google Fonts; Tahoma/sans-serif provides an offline fallback. All imagery is local. `.env.example` documents configuration variables; Django reads the process environment, so export variables before running (it does not automatically load `.env`).
 

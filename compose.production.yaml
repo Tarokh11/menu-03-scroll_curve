@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      DJANGO_DEBUG: "0"
+    ports:
+      - "${SHOP_BIND_ADDRESS:-0.0.0.0}:${SHOP_PORT:-8085}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/', timeout=4)"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 20s

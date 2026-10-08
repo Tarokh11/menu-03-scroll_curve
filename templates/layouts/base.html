@@ -16,7 +16,7 @@
     <header class="site-header">
       <a class="brand" href="{% url 'home' %}"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 43Q16 22 36 8M20 28Q8 27 9 18Q20 17 20 28M26 21Q23 10 29 7Q35 14 26 21M15 36Q3 37 4 29Q13 26 15 36M32 15Q32 4 41 3Q45 12 32 15M23 26Q35 21 39 28Q33 34 23 26M17 35Q29 29 33 37Q25 42 17 35"/></svg><span>{{ shop_name }}<small>CAFE WHITE</small></span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="باز کردن ناوبری"><span></span><span></span></button>
-      <nav id="site-nav" class="site-nav" hidden><a href="{% url 'home' %}">صفحه اصلی</a><a href="{% url 'menu' %}">منوی کافه</a><a href="{% url 'explore' %}">کشف طعم‌ها</a><a href="{% url 'menu' %}?category=breakfast">صبحانه</a></nav>
+      <nav id="site-nav" class="site-nav" hidden><a href="{% url 'home' %}">صفحه اصلی</a><a href="{% url 'menu' %}">منوی کافه</a><a href="{% url 'explore' %}">کشف طعم‌ها</a><a href="{% url 'explore' %}?category=pizza&amp;product=pizza-0">پیتزاها</a></nav>
     </header>
     {% block content %}{% endblock %}
     <footer class="site-footer"><span class="footer-leaf">❧</span><strong>کمی مکث، کمی حال خوب.</strong><p>در کافه وایت، هر لحظه طعم خودش را دارد.</p><small>منوی نمایشی · قیمت‌ها به تومان</small></footer>

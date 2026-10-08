@@ -1,0 +1,737 @@
+{
+  "source": "https://tullianapizza.com/order/tullianapizza",
+  "imported_on": "2026-10-04",
+  "categories": [
+    {
+      "slug": "pizza",
+      "name": "پیتزا",
+      "tagline": "",
+      "image": "menu/images/tulliana/qvj325no.1od_560x350.webp",
+      "items": [
+        {
+          "name": "میگو کرم پاپریکا",
+          "description": "سس کرم پاپریکا، میگو مزه دار شده، اسلایس لیمو، ریحان ایتالیایی، پیازچه، زیتون سیاه، شوید، پنیر موتزارلا تازه",
+          "price": 1750000,
+          "image": "menu/images/tulliana/qvj325no.1od_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/qvj325no.1od_560x350.jpg?v=1"
+        },
+        {
+          "name": "پولدبیف با کرم بادنجان",
+          "description": "دنده گوساله آرام پز، کرم بادنجان ارمنی، فرایز پیاز، سس اسموکی، پنیر موتزارلا تازه",
+          "price": 1750000,
+          "image": "menu/images/tulliana/b0xecrw1.rn2_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/b0xecrw1.rn2_560x350.jpg?v=1"
+        },
+        {
+          "name": "گیلاس و پسته",
+          "description": "گیلاس بریز شده در سیروپ، پسته، بیانکای معطر، پنیر بز دودی، پنیر موتزارلا تازه",
+          "price": 1280000,
+          "image": "menu/images/tulliana/5dcy4mm5.pd2_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/5dcy4mm5.pd2_560x350.jpg?v=1"
+        },
+        {
+          "name": "هلو و بیکن",
+          "description": "هلو دودی و بریز شده در سیروپ، اندویا و گلیز بالزامیک، بیکن راسته گوساله، پنیر بز دودی، پنیر موتزارلا تازه",
+          "price": 1800000,
+          "image": "menu/images/tulliana/4l0byqye.tqw_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/4l0byqye.tqw_560x350.jpg?v=1"
+        },
+        {
+          "name": "بوقلمون و چیلی کرانچ",
+          "description": "بوقلمون پروسس، پرک بادام رست شده، پیاز بنفش کاراملی، چیلی کرانچ، پنیر موتزارلا تازه",
+          "price": 1550000,
+          "image": "menu/images/tulliana/kyhgrqd0.v51_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/kyhgrqd0.v51_560x350.jpg?v=1"
+        },
+        {
+          "name": "میگو اسکمپی",
+          "description": "سس بیانکا، میگو مزه دار شده، پیاز بنفش، پیازچه، کیپرز، خاویار غیر استروژن، سس رنچ، پنیر موتزارلا تازه",
+          "price": 1750000,
+          "image": "menu/images/tulliana/vvouesyi.zed_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/vvouesyi.zed_560x350.jpg?v=1"
+        },
+        {
+          "name": "بیکن و چیلی آووکادو",
+          "description": "سس آووکادو چیلی، بیکن گوساله، آووکادو مزه دار شده، پرک فلفل، پنیر موتزارلا تازه",
+          "price": 1600000,
+          "image": "menu/images/tulliana/thvlxknf.iot_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/thvlxknf.iot_560x350.jpg?v=1"
+        },
+        {
+          "name": "بوقلمون باربیکیو",
+          "description": "سس آلاباما، سينه بوقلمون فرآوري شده، فلفل دلمه رست شده، پياز بنفش، بيكن جم، پنير چدار، پنير موتزارلا تازه",
+          "price": 1350000,
+          "image": "menu/images/tulliana/vfqqa552.cwy_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/vfqqa552.cwy_560x350.jpg?v=1"
+        },
+        {
+          "name": "سالامی",
+          "description": "سس مارينارا، سالامي، فلفل دلمه رست شده، پنير موتزارلا تازه",
+          "price": 1300000,
+          "image": "menu/images/tulliana/ymyhfxnk.5yt_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ymyhfxnk.5yt_560x350.jpg?v=1"
+        },
+        {
+          "name": "پنیر گردو",
+          "description": "سس بيانكا، پياز بنفش كاراملي، گردو، پنير تخميري، هات هاني، پنير موتزارلا تازه",
+          "price": 950000,
+          "image": "menu/images/tulliana/0s0ngd4o.jkv_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/0s0ngd4o.jkv_560x350.jpg?v=1"
+        },
+        {
+          "name": "بیکن و کرم اسفناج",
+          "description": "سس اسفناج آلفردو، بیکن گوساله، استراچیاتلا، پنیر موتزارلا تازه",
+          "price": 1450000,
+          "image": "menu/images/tulliana/sensiyn2.acs_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/sensiyn2.acs_560x350.jpg?v=1"
+        },
+        {
+          "name": "استیک بیانکا",
+          "description": "سس بیانکا، راسته گوساله مزه دار شده، قارچ، پياز كاراملي، پنير موتزارلا تازه",
+          "price": 1700000,
+          "image": "menu/images/tulliana/oy3s33it.qu2_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/oy3s33it.qu2_560x350.jpg?v=1"
+        },
+        {
+          "name": "سیر و استیک",
+          "description": "سس مارینارا، راسته گوساله مزه دار شده، پیاز کاراملی، سس سیر، پنیر موتزارلا تازه",
+          "price": 1650000,
+          "image": "menu/images/tulliana/xdw05aej.20r_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/xdw05aej.20r_560x350.jpg?v=1"
+        },
+        {
+          "name": "پیتزا بیکن و قارچ",
+          "description": "سس مارینارا، بیکن گوساله، قارچ، سس کاربونارا، پنیر موتزارلا تازه",
+          "price": 1500000,
+          "image": "menu/images/tulliana/yyeb53jd.ol5_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/yyeb53jd.ol5_560x350.jpg?v=1"
+        },
+        {
+          "name": "چوریزو پاپریکا",
+          "description": "سس پاپریکا، چوریزو، فلفل چیلی، ریحان ایتالیایی، قارچ صدفی، پنیر چدار، پنیر موتزارلا تازه",
+          "price": 1350000,
+          "image": "menu/images/tulliana/w1zo1r0f.b4j_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/w1zo1r0f.b4j_560x350.jpg?v=1"
+        },
+        {
+          "name": "پپرونی",
+          "description": "سس گوجه چیلی، پپرونی تخمیری، پرک فلفل، پنیر موتزارلا تازه",
+          "price": 1400000,
+          "image": "menu/images/tulliana/uk5sd4zp.ks0_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/uk5sd4zp.ks0_560x350.jpg?v=1"
+        },
+        {
+          "name": "پیتزا مرغ پستو",
+          "description": "سس پستو، سینه مرغ مزه دار شده، فلفل دلمه رست شده، گوجه چری، پنیر موتزارلا تازه",
+          "price": 1350000,
+          "image": "menu/images/tulliana/ua1hak3v.1nm_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ua1hak3v.1nm_560x350.jpg?v=1"
+        },
+        {
+          "name": "اسموکی کربونارا",
+          "description": "سس بیانکا، بیکن گوساله، دیپ پیاز کاراملی، پنیر دودی، زرده تخم مرغ، پنیر پارمسان، پنیر موتزارلا تازه",
+          "price": 1450000,
+          "image": "menu/images/tulliana/ae5xectu.3du_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ae5xectu.3du_560x350.jpg?v=1"
+        },
+        {
+          "name": "قارچ",
+          "description": "سس بيانكا، قارچ صدفی، قارچ دکمه ای، پنیر بز، پنیر پارمسان، پنیر موتزارلا تازه",
+          "price": 1250000,
+          "image": "menu/images/tulliana/dnoaeqvc.vad_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/dnoaeqvc.vad_560x350.jpg?v=1"
+        },
+        {
+          "name": "مارینارا پستو با پنیر",
+          "description": "سس مارینارا، سس پستو، پنیر موتزارلا تازه",
+          "price": 950000,
+          "image": "menu/images/tulliana/xdhm1o5t.cjb_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/xdhm1o5t.cjb_560x350.jpg?v=1"
+        },
+        {
+          "name": "مارینارا پستو",
+          "description": "سس مارینارا، سس پستو",
+          "price": 800000,
+          "image": "menu/images/tulliana/ztzoecvd.1ze_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ztzoecvd.1ze_560x350.jpg?v=1"
+        },
+        {
+          "name": "مارگریتا",
+          "description": ".",
+          "price": 950000,
+          "image": "menu/images/tulliana/a01j0rhx.ls4_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/a01j0rhx.ls4_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "pasta",
+      "name": "پاستا",
+      "tagline": "",
+      "image": "menu/images/tulliana/f23aisxx.p5c_560x350.webp",
+      "items": [
+        {
+          "name": "لینگوینی پومودورو",
+          "description": "سس گوجه فرنگی تازه، ریحان و روغن زیتون، به همراه استراچیاتلا و کنفی گوجه چری، کره ترکیبی گوجه خشک",
+          "price": 890000,
+          "image": "menu/images/tulliana/f23aisxx.p5c_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/f23aisxx.p5c_560x350.jpg?v=1"
+        },
+        {
+          "name": "لینگویینی چیکن پارم",
+          "description": "فیله مرغ برشته با سس گوجه فرنگی، موتزارلا تازه، پارمزان، ریحان تازه و گوجه خشک",
+          "price": 1190000,
+          "image": "menu/images/tulliana/oq2yorx4.god_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/oq2yorx4.god_560x350.jpg?v=1"
+        },
+        {
+          "name": "فوسیلی مری می",
+          "description": "سس خامه ای گوجه خشک، اسفناج، سیر، پارمزان",
+          "price": 990000,
+          "image": "menu/images/tulliana/tpo02gzv.rom_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/tpo02gzv.rom_560x350.jpg?v=1"
+        },
+        {
+          "name": "فتوچینی پستو جنووا",
+          "description": "سس پستو جنووا ، پارمزان ، بنه + تخم مرغ پوچد شده (انتخابی)",
+          "price": 1050000,
+          "image": "menu/images/tulliana/ekjgqqqp.nle_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ekjgqqqp.nle_560x350.jpg?v=1"
+        },
+        {
+          "name": "راویولی اسفناج و ریکوتا",
+          "description": "راویولی دست ساز در سس فندق برشته کره ای با آرومای مرکبات",
+          "price": 1250000,
+          "image": "menu/images/tulliana/fvkybwbd.ax5_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/fvkybwbd.ax5_560x350.jpg?v=1"
+        },
+        {
+          "name": "فوسیلی میگو آسیایی",
+          "description": "سس خامه ای گوچوجانگ با آرومای سیر و زنجبیل، میگوی سوته شده در کره و سرکه برنج، پیازچه ژولین",
+          "price": 1450000,
+          "image": "menu/images/tulliana/m2nwqo2t.3dx_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/m2nwqo2t.3dx_560x350.jpg?v=1"
+        },
+        {
+          "name": "فتوچینی چیکن کریما",
+          "description": "سس خامه ای پارمزان و کره، فیله مرغ پن فرای با آرومای سیر",
+          "price": 1350000,
+          "image": "menu/images/tulliana/iniwlsqy.jsm_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/iniwlsqy.jsm_560x350.jpg?v=1"
+        },
+        {
+          "name": "پاپاردله راگو جنووا",
+          "description": "راگوی دنده گوساله و پیاز آرام پز با عصاره مالت ، خامه ترش، ژو",
+          "price": 1690000,
+          "image": "menu/images/tulliana/glduw55y.ikd_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/glduw55y.ikd_560x350.jpg?v=1"
+        },
+        {
+          "name": "لازانیا بولونز",
+          "description": "راگوی آرام پز بولونیا، بشامل، پارمزان، موتزارلا تازه",
+          "price": 1500000,
+          "image": "menu/images/tulliana/qu1qqcpm.rp5_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/qu1qqcpm.rp5_560x350.jpg?v=1"
+        },
+        {
+          "name": "ریگاتونی تالیانا",
+          "description": "سس کربونارا رزتا، بیکن، پارمزان",
+          "price": 1390000,
+          "image": "menu/images/tulliana/hpdxfr3i.fx4_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/hpdxfr3i.fx4_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "sandwich",
+      "name": "ساندویچ",
+      "tagline": "",
+      "image": "menu/images/tulliana/xbc33mef.cie_560x350.webp",
+      "items": [
+        {
+          "name": "ساندویچ سوسیس شکاری",
+          "description": "سوسیس شکاری دست‌ساز، کاهو فرانسوی، پنیر خامه‌ای، خیارشور دست‌ساز، ترشی پیاز بنفش، سس فرنچ، نان خمیر ناپولیتن",
+          "price": 980000,
+          "image": "menu/images/tulliana/xbc33mef.cie_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/xbc33mef.cie_560x350.jpg?v=1"
+        },
+        {
+          "name": "ساندویچ مارتادلا",
+          "description": "مارتادلا، کاهو فرانسوی، استراچیاتلا، پسته، سس رنچ، نان خمیر ناپولیتن",
+          "price": 890000,
+          "image": "menu/images/tulliana/4ukba3ql.0t0_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/4ukba3ql.0t0_560x350.jpg?v=1"
+        },
+        {
+          "name": "ساندویچ مرغ پستو",
+          "description": "150 گرم سینه مرغ گریل شده، پنیر پستو، کاهو فرانسوی، گوجه، سس پستو، خمیر نان ناپولیتن",
+          "price": 990000,
+          "image": "menu/images/tulliana/qx3plxbz.hke_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/qx3plxbz.hke_560x350.jpg?v=1"
+        },
+        {
+          "name": "ساندویچ بیکن و پنیر",
+          "description": "بيكن گوساله، كاهو فرانسوي، پنير پارمسان ورقه، گوجه، پياز كاراملي، سس فرنچ",
+          "price": 1100000,
+          "image": "menu/images/tulliana/32uymizf.nhg_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/32uymizf.nhg_560x350.jpg?v=1"
+        },
+        {
+          "name": "ساندویچ پولد بیف",
+          "description": "پولد بيف، كاهو فرانسوي، پياز كاراملي، خيار شور دست ساز، پنير پارمسان ورقه، سس رنچ",
+          "price": 1150000,
+          "image": "menu/images/tulliana/x3sr2lmb.cgx_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/x3sr2lmb.cgx_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "starter",
+      "name": "پیش غذا",
+      "tagline": "",
+      "image": "menu/images/tulliana/kzgk0xqa.h3v_560x350.webp",
+      "items": [
+        {
+          "name": "سیب زمینی خلال با پودر پنیر",
+          "description": "350 گرم سیب زمینی خلالی سرخ کرده، پودر پنیر، سس فرنچ",
+          "price": 530000,
+          "image": "menu/images/tulliana/kzgk0xqa.h3v_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/kzgk0xqa.h3v_560x350.jpg?v=1"
+        },
+        {
+          "name": "سیب زمینی توپی با سس قارچ",
+          "description": "350 گرم سیب زمینی توپی سرخ کرده، سس قارچ، سس سوییت چیلی",
+          "price": 650000,
+          "image": "menu/images/tulliana/1vsdw313.3g5_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/1vsdw313.3g5_560x350.jpg?v=1"
+        },
+        {
+          "name": "سامر زوکینی",
+          "description": "کدوی باتر فرایز با دیپ زاتزیکی",
+          "price": 680000,
+          "image": "menu/images/tulliana/hdypuq3x.5bw_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/hdypuq3x.5bw_560x350.jpg?v=1"
+        },
+        {
+          "name": "نان سیر",
+          "description": "خمير ناپوليتن، كره مزه دار شده با سير و سبزيجات معطر، پنير پارمسان، پنير موتزارلا",
+          "price": 750000,
+          "image": "menu/images/tulliana/odp2i3gu.ms0_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/odp2i3gu.ms0_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس قارچ",
+          "description": "",
+          "price": 95000,
+          "image": "menu/images/tulliana/hdypuq3x.5bw_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/hdypuq3x.5bw_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "salad",
+      "name": "سالاد",
+      "tagline": "",
+      "image": "menu/images/tulliana/nl1d35f4.nau_560x350.webp",
+      "items": [
+        {
+          "name": "سالاد بیکن و گلابی",
+          "description": "كاهو رسمي، ليتل جم، روكولا، بيكن، گلابي كاراملي، ريحان، گردو، وافل، پنير خامه اي، پنير تخميري، وينگريت ليمو",
+          "price": 1200000,
+          "image": "menu/images/tulliana/nl1d35f4.nau_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/nl1d35f4.nau_560x350.jpg?v=1"
+        },
+        {
+          "name": "سالاد جاردینو",
+          "description": "كاهو رسمی، بی بی اسفناج، نعنا، خيار، سیب، گردو، پياز بنفش، پنیر فتا، مویز، تخم کدو، سس جاردینو",
+          "price": 950000,
+          "image": "menu/images/tulliana/yowhurcd.uas_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/yowhurcd.uas_560x350.jpg?v=1"
+        },
+        {
+          "name": "سالاد سزار",
+          "description": "150 گرم سینه مرغ گریل شده، پنیر پارمسان، کاهو، سس سزار، نان کروتان",
+          "price": 980000,
+          "image": "menu/images/tulliana/as5y4vyu.a2a_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/as5y4vyu.a2a_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "gelato",
+      "name": "بستنی",
+      "tagline": "",
+      "image": "menu/images/tulliana/ibcrrpfe.eld_560x350.webp",
+      "items": [
+        {
+          "name": "سافت جلاتو وانیل",
+          "description": "",
+          "price": 250000,
+          "image": "menu/images/tulliana/ibcrrpfe.eld_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ibcrrpfe.eld_560x350.jpg?v=1"
+        },
+        {
+          "name": "سافت جلاتو خیار و نعنا",
+          "description": "",
+          "price": 350000,
+          "image": "menu/images/tulliana/cefdrgk4.psj_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/cefdrgk4.psj_560x350.jpg?v=1"
+        },
+        {
+          "name": "سافت جلاتو کارامل نمکی",
+          "description": "",
+          "price": 380000,
+          "image": "menu/images/tulliana/3bode411.w2z_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/3bode411.w2z_560x350.jpg?v=1"
+        },
+        {
+          "name": "سافت جلاتو پشن فروت و چیلی",
+          "description": "",
+          "price": 440000,
+          "image": "menu/images/tulliana/fdaf3dwz.jpz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/fdaf3dwz.jpz_560x350.jpg?v=1"
+        },
+        {
+          "name": "ماچا جلاتو",
+          "description": "",
+          "price": 300000,
+          "image": "menu/images/tulliana/l1h3jsyi.u32_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/l1h3jsyi.u32_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "coffee",
+      "name": "قهوه",
+      "tagline": "",
+      "image": "menu/images/tulliana/yp2xodr2.kar_560x350.webp",
+      "items": [
+        {
+          "name": "اسپرسو",
+          "description": "",
+          "price": 220000,
+          "image": "menu/images/tulliana/yp2xodr2.kar_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/yp2xodr2.kar_560x350.jpg?v=1"
+        },
+        {
+          "name": "امریکانو",
+          "description": "",
+          "price": 220000,
+          "image": "menu/images/tulliana/3va2rv5e.ajh_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/3va2rv5e.ajh_560x350.jpg?v=1"
+        },
+        {
+          "name": "لاته",
+          "description": "",
+          "price": 270000,
+          "image": "menu/images/tulliana/44cdnnhw.in2_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/44cdnnhw.in2_560x350.jpg?v=1"
+        },
+        {
+          "name": "موکا",
+          "description": "",
+          "price": 295000,
+          "image": "menu/images/tulliana/4zxeppnu.s4t_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/4zxeppnu.s4t_560x350.jpg?v=1"
+        },
+        {
+          "name": "کارامل ماکیاتو",
+          "description": "",
+          "price": 295000,
+          "image": "menu/images/tulliana/wi3cop03.dxx_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/wi3cop03.dxx_560x350.jpg?v=1"
+        },
+        {
+          "name": "آیریش لاته",
+          "description": "",
+          "price": 310000,
+          "image": "menu/images/tulliana/dlgxwfr4.udz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/dlgxwfr4.udz_560x350.jpg?v=1"
+        },
+        {
+          "name": "چای دمی",
+          "description": "",
+          "price": 100000,
+          "image": "menu/images/tulliana/nmuf3rnc.jej_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/nmuf3rnc.jej_560x350.jpg?v=1"
+        },
+        {
+          "name": "کاپوچینو",
+          "description": "",
+          "price": 250000,
+          "image": "menu/images/tulliana/rgxsvsbp.4tf_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/rgxsvsbp.4tf_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "cold",
+      "name": "نوشیدنی سرد",
+      "tagline": "",
+      "image": "menu/images/tulliana/2bqre2mj.vjl_560x350.webp",
+      "items": [
+        {
+          "name": "منگو اورنج",
+          "description": "",
+          "price": 220000,
+          "image": "menu/images/tulliana/2bqre2mj.vjl_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/2bqre2mj.vjl_560x350.jpg?v=1"
+        },
+        {
+          "name": "نات رایس",
+          "description": "",
+          "price": 230000,
+          "image": "menu/images/tulliana/pdvj2emd.1oy_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/pdvj2emd.1oy_560x350.jpg?v=1"
+        },
+        {
+          "name": "سودا ساده لیوانی",
+          "description": "",
+          "price": 160000,
+          "image": "menu/images/tulliana/d0wcqfbi.cuk_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/d0wcqfbi.cuk_560x350.jpg?v=1"
+        },
+        {
+          "name": "سودا با لیمو لیوانی",
+          "description": "",
+          "price": 180000,
+          "image": "menu/images/tulliana/2d3hhb3v.chz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/2d3hhb3v.chz_560x350.jpg?v=1"
+        },
+        {
+          "name": "کوکا لیوانی",
+          "description": "",
+          "price": 135000,
+          "image": "menu/images/tulliana/nzyo4eaz.5sh_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/nzyo4eaz.5sh_560x350.jpg?v=1"
+        },
+        {
+          "name": "زیرو لیوانی",
+          "description": "",
+          "price": 135000,
+          "image": "menu/images/tulliana/nzyo4eaz.5sh_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/nzyo4eaz.5sh_560x350.jpg?v=1"
+        },
+        {
+          "name": "فانتا لیوانی",
+          "description": "",
+          "price": 135000,
+          "image": "menu/images/tulliana/21qux4fm.hkg_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/21qux4fm.hkg_560x350.jpg?v=1"
+        },
+        {
+          "name": "پینک گریپ",
+          "description": "",
+          "price": 230000,
+          "image": "menu/images/tulliana/01znhgix.awb_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/01znhgix.awb_560x350.jpg?v=1"
+        },
+        {
+          "name": "جینجیر بیت",
+          "description": "",
+          "price": 230000,
+          "image": "menu/images/tulliana/ksyayzn4.jmm_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ksyayzn4.jmm_560x350.jpg?v=1"
+        },
+        {
+          "name": "بلادی مری",
+          "description": "",
+          "price": 230000,
+          "image": "menu/images/tulliana/up4evvbx.hol_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/up4evvbx.hol_560x350.jpg?v=1"
+        },
+        {
+          "name": "باسیل",
+          "description": "",
+          "price": 230000,
+          "image": "menu/images/tulliana/ygxbjzcu.50d_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ygxbjzcu.50d_560x350.jpg?v=1"
+        },
+        {
+          "name": "آب معدنی",
+          "description": "",
+          "price": 60000,
+          "image": "menu/images/no-photo.svg",
+          "source_image": null
+        }
+      ]
+    },
+    {
+      "slug": "soft-drinks",
+      "name": "نوشیدنی شرکتی",
+      "tagline": "",
+      "image": "menu/images/tulliana/hjnjgt3p.bkq_560x350.webp",
+      "items": [
+        {
+          "name": "کوکا",
+          "description": "",
+          "price": 85000,
+          "image": "menu/images/tulliana/hjnjgt3p.bkq_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/hjnjgt3p.bkq_560x350.jpg?v=1"
+        },
+        {
+          "name": "فانتا",
+          "description": "",
+          "price": 85000,
+          "image": "menu/images/tulliana/eljtyju2.r5t_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/eljtyju2.r5t_560x350.jpg?v=1"
+        },
+        {
+          "name": "اسپرایت",
+          "description": "",
+          "price": 85000,
+          "image": "menu/images/tulliana/rfoc1snr.433_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/rfoc1snr.433_560x350.jpg?v=1"
+        },
+        {
+          "name": "کوکا زیرو",
+          "description": "",
+          "price": 85000,
+          "image": "menu/images/tulliana/layzd0es.wza_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/layzd0es.wza_560x350.jpg?v=1"
+        },
+        {
+          "name": "هی دی کلاسیک",
+          "description": "",
+          "price": 90000,
+          "image": "menu/images/tulliana/qqcpxhrg.ol3_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/qqcpxhrg.ol3_560x350.jpg?v=1"
+        },
+        {
+          "name": "هی دی لیمو",
+          "description": "",
+          "price": 90000,
+          "image": "menu/images/tulliana/52gc54te.aki_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/52gc54te.aki_560x350.jpg?v=1"
+        }
+      ]
+    },
+    {
+      "slug": "extras",
+      "name": "افزودنی ها",
+      "tagline": "",
+      "image": "menu/images/tulliana/lxpluauj.je3_560x350.webp",
+      "items": [
+        {
+          "name": "مرغ اضافه",
+          "description": "",
+          "price": 310000,
+          "image": "menu/images/tulliana/lxpluauj.je3_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/lxpluauj.je3_560x350.jpg?v=1"
+        },
+        {
+          "name": "گیفت",
+          "description": "",
+          "price": 250000,
+          "image": "menu/images/tulliana/abijyih5.30a_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/abijyih5.30a_560x350.jpg?v=1"
+        },
+        {
+          "name": "لیمو اضافه",
+          "description": "",
+          "price": 10000,
+          "image": "menu/images/tulliana/1ubt342y.4ty_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/1ubt342y.4ty_560x350.jpg?v=1"
+        },
+        {
+          "name": "روغن اضافه",
+          "description": "",
+          "price": 25000,
+          "image": "menu/images/tulliana/ihd3yzdb.ldb_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ihd3yzdb.ldb_560x350.jpg?v=1"
+        },
+        {
+          "name": "قارچ اضافه",
+          "description": "",
+          "price": 85000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        },
+        {
+          "name": "بیکن اضافه",
+          "description": "",
+          "price": 270000,
+          "image": "menu/images/tulliana/cklezwq2.u04_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/cklezwq2.u04_560x350.jpg?v=1"
+        },
+        {
+          "name": "چوریزو اضافه",
+          "description": "",
+          "price": 210000,
+          "image": "menu/images/tulliana/ghppcpgs.fzh_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ghppcpgs.fzh_560x350.jpg?v=1"
+        },
+        {
+          "name": "پپرونی اضافه",
+          "description": "",
+          "price": 155000,
+          "image": "menu/images/tulliana/guv21tvw.lom_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/guv21tvw.lom_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس پستو اضافه",
+          "description": "",
+          "price": 95000,
+          "image": "menu/images/tulliana/fi4ob0ko.ftq_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/fi4ob0ko.ftq_560x350.jpg?v=1"
+        },
+        {
+          "name": "کارد و چنگال",
+          "description": "",
+          "price": 25000,
+          "image": "menu/images/tulliana/ayvb051a.rjv_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ayvb051a.rjv_560x350.jpg?v=1"
+        },
+        {
+          "name": "استیک اضافه",
+          "description": "",
+          "price": 360000,
+          "image": "menu/images/tulliana/gt0c23cw.dci_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/gt0c23cw.dci_560x350.jpg?v=1"
+        },
+        {
+          "name": "میگو اضافه",
+          "description": "",
+          "price": 380000,
+          "image": "menu/images/tulliana/4a3dyjsf.hz2_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/4a3dyjsf.hz2_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس فرنچ اضافه",
+          "description": "یک شات سس فرانسوی دست ساز",
+          "price": 35000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        },
+        {
+          "name": "پنیر موتزارلا اضافه",
+          "description": "۱۰۰ گرم پنیر موتزارلا تازه",
+          "price": 145000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس سزار",
+          "description": "۸۰ گرم سس سزار",
+          "price": 75000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس سیر اضافه",
+          "description": "یک شات سس سیر دست ساز",
+          "price": 45000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        },
+        {
+          "name": "سس سوییت چیلی اضافه",
+          "description": "یک نفره سس چیلی تای",
+          "price": 35000,
+          "image": "menu/images/tulliana/ivalodif.bhz_560x350.webp",
+          "source_image": "https://img.delino.com/get/600/3/Image/Restaurant/Food/ivalodif.bhz_560x350.jpg?v=1"
+        }
+      ]
+    }
+  ]
+}

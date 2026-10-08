@@ -1,0 +1,90 @@
+name: Deploy café menu
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-menu-03
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 30
+    steps:
+      - name: Validate deployment secrets and configure SSH
+        env:
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_HOST }}
+          PRODUCTION_PORT: ${{ secrets.PRODUCTION_PORT || '22' }}
+          PRODUCTION_USER: ${{ secrets.PRODUCTION_USER }}
+          PRODUCTION_PATH: ${{ secrets.PRODUCTION_PATH }}
+          PRODUCTION_KNOWN_HOSTS: ${{ secrets.PRODUCTION_KNOWN_HOSTS }}
+          PRODUCTION_SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+        shell: bash
+        run: |
+          set -eu
+          for variable in PRODUCTION_HOST PRODUCTION_USER PRODUCTION_PATH PRODUCTION_KNOWN_HOSTS PRODUCTION_SSH_KEY; do
+            if [ -z "${!variable}" ]; then
+              printf 'Missing required deployment secret: %s\n' "$variable" >&2
+              exit 1
+            fi
+          done
+          [[ "$PRODUCTION_PATH" == /* && "$PRODUCTION_PATH" != / ]] || { echo 'PRODUCTION_PATH must be an absolute application directory'; exit 1; }
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$PRODUCTION_SSH_KEY" > "$HOME/.ssh/menu-deploy"
+          printf '%s\n' "$PRODUCTION_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/menu-deploy" "$HOME/.ssh/known_hosts"
+          ssh-keygen -y -P '' -f "$HOME/.ssh/menu-deploy" > /dev/null
+
+      - name: Deploy the exact workflow commit
+        env:
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_HOST }}
+          PRODUCTION_PORT: ${{ secrets.PRODUCTION_PORT || '22' }}
+          PRODUCTION_USER: ${{ secrets.PRODUCTION_USER }}
+          PRODUCTION_PATH: ${{ secrets.PRODUCTION_PATH }}
+          REPOSITORY: https://github.com/${{ github.repository }}.git
+          DEPLOY_BRANCH: ${{ github.ref_name }}
+          DEPLOY_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -eu
+          printf -v remote_path '%q' "$PRODUCTION_PATH"
+          printf -v remote_repository '%q' "$REPOSITORY"
+          printf -v remote_branch '%q' "$DEPLOY_BRANCH"
+          printf -v remote_sha '%q' "$DEPLOY_SHA"
+          ssh -i "$HOME/.ssh/menu-deploy" \
+            -o BatchMode=yes \
+            -o ConnectTimeout=10 \
+            -o ServerAliveInterval=30 \
+            -o ServerAliveCountMax=3 \
+            -o StrictHostKeyChecking=yes \
+            -p "$PRODUCTION_PORT" \
+            "$PRODUCTION_USER@$PRODUCTION_HOST" \
+            "PRODUCTION_PATH=$remote_path REPOSITORY=$remote_repository DEPLOY_BRANCH=$remote_branch DEPLOY_SHA=$remote_sha bash -se" <<'REMOTE'
+          set -eu
+          mkdir -p "$PRODUCTION_PATH"
+          test -f "$PRODUCTION_PATH/.env.production" || { echo "Create $PRODUCTION_PATH/.env.production using DEPLOYMENT.md before deploying"; exit 1; }
+          cd "$PRODUCTION_PATH"
+          if [ ! -e .git ]; then
+            git init
+          fi
+          if ! git remote get-url origin > /dev/null 2>&1; then
+            git remote add origin "$REPOSITORY"
+          fi
+          git remote set-url origin "$REPOSITORY"
+          git diff --quiet
+          git diff --cached --quiet
+          git fetch --prune origin "$DEPLOY_BRANCH"
+          git checkout --detach "$DEPLOY_SHA"
+          docker compose --env-file .env.production -f compose.production.yaml --project-name menu03 config --quiet
+          docker compose --env-file .env.production -f compose.production.yaml --project-name menu03 build
+          docker compose --env-file .env.production -f compose.production.yaml --project-name menu03 up -d --remove-orphans --wait
+          docker compose --env-file .env.production -f compose.production.yaml --project-name menu03 exec -T web python manage.py check </dev/null
+          docker compose --env-file .env.production -f compose.production.yaml --project-name menu03 ps
+          REMOTE
