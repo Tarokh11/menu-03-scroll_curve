@@ -11,7 +11,17 @@ def persian_number(value):
 
 MENU_SNAPSHOT = json.loads(Path(__file__).with_name("tulliana_menu.json").read_text())
 CATEGORIES = [category for category in MENU_SNAPSHOT["categories"] if category["slug"] != "extras"]
-MENU_GROUPS = [dict(category, items=[dict(item, price=persian_number(item["price"]))
+STATIC_SOURCE = Path(__file__).with_name("static")
+
+
+def menu_image_path(image):
+    if (STATIC_SOURCE / image).is_file():
+        return image
+    return "menu/images/no-photo.svg"
+
+
+MENU_GROUPS = [dict(category, items=[dict(item, image=menu_image_path(item["image"]),
+                                          price=persian_number(item["price"]))
                                     for item in category["items"]]) for category in CATEGORIES]
 
 
