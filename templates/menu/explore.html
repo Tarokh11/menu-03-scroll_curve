@@ -15,13 +15,25 @@
     <div class="orbit-stage" tabindex="0" role="region" aria-roledescription="گردونه محصولات" aria-label="برای انتخاب محصول بالا یا پایین بکشید یا از کلیدهای جهت استفاده کنید" aria-describedby="orbit-hint"></div>
     <div class="selection-mark" aria-hidden="true"><span></span></div>
     <div class="selected-product">
-      <div class="product-details" aria-live="polite" aria-atomic="true"><span id="selected-category">{{ first_product.category_name }}</span><h2 id="selected-name">{{ first_product.name }}</h2><p id="selected-description">{{ first_product.description }}</p><div class="selected-price"><strong id="selected-price">{{ first_product.price }}</strong> <span>تومان</span></div></div>
-      <span class="details-rule" aria-hidden="true"></span>
-      <div class="orbit-controls"><button type="button" id="orbit-prev" aria-label="محصول قبلی">↑</button><span id="orbit-count"></span><button type="button" id="orbit-next" aria-label="محصول بعدی">↓</button></div>
-      <p class="orbit-hint" id="orbit-hint">برای کشف طعم بعدی<br>تصاویر را بالا و پایین بکشید</p>
+      <div class="product-details" aria-live="polite" aria-atomic="true">
+        <span class="detail-kicker">پیشنهاد کافه</span>
+        <span id="selected-category">{{ first_product.category_name }}</span>
+        <h2 id="selected-name">{{ first_product.name }}</h2>
+        <p id="selected-description">{{ first_product.description }}</p>
+        <div class="selected-price"><span class="price-label">قیمت</span><strong id="selected-price">{{ first_product.price }}</strong><span>تومان</span></div>
+      </div>
+      <span class="orbit-count" id="orbit-count"></span>
+      <p class="orbit-hint" id="orbit-hint">برای دیدن طعم بعدی، تصویرها را بالا و پایین بکشید</p>
     </div>
     <span class="orbit-caption" aria-hidden="true">WHITE · A LITTLE MOMENT OF JOY</span>
   </section>
+  <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
+    <button class="lightbox-close" type="button" aria-label="بستن تصویر">×</button>
+    <figure>
+      <img id="lightbox-image" alt="">
+      <figcaption id="lightbox-title"></figcaption>
+    </figure>
+  </dialog>
   <noscript><p class="explore-fallback">برای استفاده از گردونه، جاوااسکریپت را فعال کنید یا <a href="{% url 'menu' %}">منوی کامل</a> را ببینید.</p></noscript>
 </main>
 {{ products|json_script:"explore-products" }}

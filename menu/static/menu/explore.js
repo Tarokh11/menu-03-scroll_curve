@@ -5,6 +5,9 @@
   const scene = root.querySelector('.orbit-scene');
   const stage = root.querySelector('.orbit-stage');
   const categories = [...root.querySelectorAll('[data-explore-category]')];
+  const lightbox = root.querySelector('#photo-lightbox');
+  const lightboxImage = root.querySelector('#lightbox-image');
+  const lightboxTitle = root.querySelector('#lightbox-title');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const number = value => new Intl.NumberFormat('fa', {useGrouping: false}).format(value);
   const mod = (value, length) => ((value % length) + length) % length;
@@ -17,6 +20,13 @@
   let lastProduct = null;
   let category = 'all';
   let geometry;
+
+  function showPhoto(item) {
+    lightboxImage.src = item.image_url;
+    lightboxImage.alt = item.name;
+    lightboxTitle.textContent = item.name;
+    if (!lightbox.open) lightbox.showModal();
+  }
 
   function measure() {
     const width = scene.clientWidth;
@@ -114,7 +124,8 @@
         const tile = document.createElement('button');
         tile.type = 'button';
         tile.className = 'orbit-card';
-        tile.setAttribute('aria-label', `انتخاب ${item.name}`);
+        tile.setAttribute('aria-label', `نمایش بزرگ ${item.name}`);
+        tile.setAttribute('aria-haspopup', 'dialog');
         tile.dataset.product = item.id;
         const image = document.createElement('img');
         image.src = item.image_url;
@@ -128,6 +139,7 @@
           if (suppressClick) return;
           const delta = mod(index - position + tiles.length / 2, tiles.length) - tiles.length / 2;
           select(position + delta);
+          showPhoto(item);
         });
         tiles.push(tile);
         fragment.append(tile);
@@ -208,8 +220,10 @@
       else select(Math.round(position) + (['ArrowDown', 'ArrowRight'].includes(event.key) ? 1 : -1));
     }
   });
-  root.querySelector('#orbit-prev').addEventListener('click', () => select(Math.round(position) - 1));
-  root.querySelector('#orbit-next').addEventListener('click', () => select(Math.round(position) + 1));
+  root.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) lightbox.close();
+  });
   new ResizeObserver(measure).observe(scene);
   const params = new URLSearchParams(location.search);
   const initialCategory = categories.find(chip => chip.dataset.exploreCategory === params.get('category'));
